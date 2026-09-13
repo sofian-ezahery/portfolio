@@ -142,7 +142,7 @@ export const ContactUs: FC = () => {
                 </div>
                 <div>
                   <span className="block text-sm font-medium text-foreground/90">
-                    France
+                    Belfort, France 90000
                   </span>
                   <span className="block text-[11px] text-muted-foreground/70 mt-0.5">
                     {{

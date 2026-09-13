@@ -88,7 +88,7 @@ const translations: Record<Language, TranslationDict> = {
       ctaResume: 'Voir le CV',
       powerOn: 'Système : ON',
       powerOff: 'Système : OFF',
-      location: 'France',
+      location: 'Belfort, France 90000',
       name: 'Sofian Ez-ahery',
     },
     skills: {
@@ -154,7 +154,7 @@ const translations: Record<Language, TranslationDict> = {
       ctaResume: 'View Resume',
       powerOn: 'System: ON',
       powerOff: 'System: OFF',
-      location: 'France',
+      location: 'Belfort, France 90000',
       name: 'Sofian Ez-ahery',
     },
     skills: {
