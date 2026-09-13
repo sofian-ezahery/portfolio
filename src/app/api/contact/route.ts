@@ -61,7 +61,7 @@ export async function POST(req: Request) {
   try {
     const { error } = await resend.emails.send({
       from: `Contact Form <onboarding@resend.dev>`,
-      to: ['sofian.ezahery0@icloud.com'],
+      to: ['sofian.ezahery0@gmail.com'],
       replyTo: email,
       subject: sanitizedSubject,
       html: `
