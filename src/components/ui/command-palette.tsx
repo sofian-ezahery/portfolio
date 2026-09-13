@@ -365,7 +365,7 @@ export const CommandPalette: FC = () => {
                   sélectionner
                 </span>
               </div>
-              <span className="font-medium text-muted-foreground/60">sofian-ezahery.dev</span>
+              <span className="font-medium text-muted-foreground/60">sofianezahery.com</span>
             </div>
           </motion.div>
         </div>

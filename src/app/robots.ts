@@ -9,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ['/api/'],
       },
     ],
-    sitemap: 'https://sofian-ezahery.dev/sitemap.xml',
+    sitemap: 'https://sofianezahery.com/sitemap.xml',
   }
 }

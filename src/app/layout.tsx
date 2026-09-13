@@ -21,7 +21,7 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://sofian-ezahery.dev'),
+  metadataBase: new URL('https://sofianezahery.com'),
   title: 'Sofian Ez-ahery - DevOps',
   description:
     'Portfolio de Sofian Ez-ahery, Administrateur Systèmes & Réseaux spécialisé DevOps : CI/CD, cloud (AWS, Azure), conteneurisation, IaC et automatisation.',
@@ -40,13 +40,13 @@ export const metadata: Metadata = {
   authors: [{ name: 'Sofian Ez-ahery', url: 'https://github.com/sofian-ezahery' }],
   creator: 'Sofian Ez-ahery',
   alternates: {
-    canonical: 'https://sofian-ezahery.dev',
+    canonical: 'https://sofianezahery.com',
   },
   manifest: '/manifest.webmanifest',
   openGraph: {
     type: 'website',
     locale: 'fr_FR',
-    url: 'https://sofian-ezahery.dev',
+    url: 'https://sofianezahery.com',
     title: 'Sofian Ez-ahery — Ingénieur DevOps',
     description:
       'Administrateur Systèmes & Réseaux spécialisé DevOps : automatisation CI/CD, cloud, conteneurisation et Infrastructure as Code.',
@@ -85,13 +85,13 @@ const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Person',
   name: 'Sofian Ez-ahery',
-  url: 'https://sofian-ezahery.dev',
+  url: 'https://sofianezahery.com',
   jobTitle: 'Ingénieur DevOps',
   sameAs: [
     'https://github.com/sofian-ezahery',
     'https://www.linkedin.com/in/sofian-ezahery/',
   ],
-  image: 'https://sofian-ezahery.dev/sofian.jpg',
+  image: 'https://sofianezahery.com/sofian.jpg',
   email: 'sofian.ezahery0@icloud.com',
   telephone: '+33685574887',
   description:
