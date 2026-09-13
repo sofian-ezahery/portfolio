@@ -21,51 +21,51 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://ashlok.dev'),
-  title: 'Ashlok Chaudhary - SDE',
+  metadataBase: new URL('https://sofian-ezahery.dev'),
+  title: 'Sofian Ez-ahery - DevOps',
   description:
-    'Personal portfolio of Ashlok Chaudhary, a Software Development Engineer building scalable, reliable, production-grade systems and applications.',
+    'Portfolio de Sofian Ez-ahery, Administrateur Systèmes & Réseaux spécialisé DevOps : CI/CD, cloud (AWS, Azure), conteneurisation, IaC et automatisation.',
   keywords: [
-    'Ashlok Chaudhary',
-    'Software Development Engineer',
-    'Software Engineer',
-    'Full Stack Developer',
-    'Backend Developer',
-    'Systems Developer',
-    'Go developer',
-    'Rust developer',
+    'Sofian Ez-ahery',
+    'DevOps',
+    'Administrateur Systèmes et Réseaux',
+    'Ingénieur DevOps',
+    'SRE',
+    'Cloud AWS Azure',
+    'CI/CD',
+    'Docker Kubernetes',
+    'Terraform Ansible',
     'Next.js portfolio',
-    'Software Engineer India',
   ],
-  authors: [{ name: 'Ashlok Chaudhary', url: 'https://github.com/Ashlok2003' }],
-  creator: 'Ashlok Chaudhary',
+  authors: [{ name: 'Sofian Ez-ahery', url: 'https://github.com/sofian-ezahery' }],
+  creator: 'Sofian Ez-ahery',
   alternates: {
-    canonical: 'https://ashlok.dev',
+    canonical: 'https://sofian-ezahery.dev',
   },
   manifest: '/manifest.webmanifest',
   openGraph: {
     type: 'website',
-    locale: 'en_US',
-    url: 'https://ashlok.dev',
-    title: 'Ashlok Chaudhary — Software Development Engineer',
+    locale: 'fr_FR',
+    url: 'https://sofian-ezahery.dev',
+    title: 'Sofian Ez-ahery — Ingénieur DevOps',
     description:
-      'Software Development Engineer building scalable systems, robust applications, and the tooling that keeps them running.',
-    siteName: 'Ashlok Chaudhary Portfolio',
+      'Administrateur Systèmes & Réseaux spécialisé DevOps : automatisation CI/CD, cloud, conteneurisation et Infrastructure as Code.',
+    siteName: 'Sofian Ez-ahery Portfolio',
     images: [
       {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Ashlok Chaudhary Portfolio',
+        alt: 'Sofian Ez-ahery Portfolio',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Ashlok Chaudhary — Software Development Engineer',
+    title: 'Sofian Ez-ahery — Ingénieur DevOps',
     description:
-      'Software Development Engineer building scalable systems, robust applications, and the tooling that keeps them running.',
-    creator: '@ashlok2003',
+      'Administrateur Systèmes & Réseaux spécialisé DevOps : automatisation CI/CD, cloud, conteneurisation et Infrastructure as Code.',
+    creator: '@sofian_ezahery',
     images: ['/og-image.png'],
   },
   robots: {
@@ -84,17 +84,18 @@ export const metadata: Metadata = {
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Person',
-  name: 'Ashlok Chaudhary',
-  url: 'https://ashlok.dev',
-  jobTitle: 'Software Development Engineer',
+  name: 'Sofian Ez-ahery',
+  url: 'https://sofian-ezahery.dev',
+  jobTitle: 'Ingénieur DevOps',
   sameAs: [
-    'https://github.com/Ashlok2003',
-    'https://www.linkedin.com/in/ashlok2003/',
-    'https://x.com/ashlok2003',
+    'https://github.com/sofian-ezahery',
+    'https://www.linkedin.com/in/sofian-ezahery/',
   ],
-  image: 'https://ashlok.dev/ashlok.jpg',
+  image: 'https://sofian-ezahery.dev/sofian.jpg',
+  email: 'sofian.ezahery0@icloud.com',
+  telephone: '+33685574887',
   description:
-    'Software Development Engineer building scalable, reliable, production-grade systems and applications.',
+    'Administrateur Systèmes & Réseaux spécialisé DevOps : CI/CD, cloud, conteneurisation, IaC et automatisation.',
 }
 
 export default function RootLayout({
@@ -103,7 +104,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="fr" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground custom-scrollbar overflow-x-hidden`}
       >

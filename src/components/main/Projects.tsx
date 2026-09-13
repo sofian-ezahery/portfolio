@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { FC, useState } from 'react'
 import { projectsData, Project } from '@/constants'
 import { FaGithub } from 'react-icons/fa'
-import { Plus, Minus, Terminal, ShieldAlert, Cpu, Award, ArrowUpRight } from 'lucide-react'
+import { Plus, Minus, Terminal, ShieldAlert, Cpu, Award, ArrowUpRight, FolderGit2 } from 'lucide-react'
 import { useLanguage } from '@/components/language-provider'
 
 const getIconKey = (tag: string): string => {
@@ -79,10 +79,8 @@ export const Projects: FC = () => {
     return null
   }
 
-  // Only display the 4 high-quality engineering projects (remove simple ones)
-  const premiumProjects = projectsData.filter(p =>
-    ['deeptab', 'snappy pro', 'shopxindia', 'socialpedia'].includes(p.title.toLowerCase())
-  )
+  // Display all projects
+  const premiumProjects = projectsData
 
   return (
     <SectionWrapper id="projects" title={t.projects.title} code="0x05">
@@ -107,15 +105,10 @@ export const Projects: FC = () => {
                 >
                   <div className="flex items-start gap-4">
                     <div className={`size-10 border rounded-lg shrink-0 mt-0.5 overflow-hidden transition-all duration-300 flex items-center justify-center ${isExpanded
-                        ? 'border-brand-blue/30 shadow-[0_0_15px_rgba(59,130,246,0.15)]'
-                        : 'border-border'
+                      ? 'border-brand-blue/30 shadow-[0_0_15px_rgba(59,130,246,0.15)]'
+                      : 'border-border'
                       }`}>
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
-                        src={project.title.toLowerCase() === 'snappy pro' ? '/snappy-logo.png' : `/${project.title.toLowerCase().replace(' ', '-')}-logo.png`}
-                        alt={`${project.title} logo`}
-                        className={`size-full object-cover scale-[1.35] transition-all duration-300 ${isExpanded ? 'scale-[1.45]' : 'opacity-95 group-hover:opacity-100 group-hover:scale-[1.45]'}`}
-                      />
+                      <FolderGit2 className="h-4 w-4 text-muted-foreground" />
                     </div>
                     <div>
                       <div className="flex items-center gap-2">

@@ -1,4 +1,4 @@
-import { BlogsSection } from '@/components/main/Blogs'
+// import { BlogsSection } from '@/components/main/Blogs' // Section Articles masquée temporairement
 import ContactUs from '@/components/main/ContactUs'
 import Hero from '@/components/main/Hero'
 import Projects from '@/components/main/Projects'
@@ -23,11 +23,13 @@ export default function Home() {
       <Timeline />
       <SectionDivider code="0x05" />
       <Projects />
+      {/* Section Articles masquée temporairement (contenu pas encore rédigé par Sofian)
       <SectionDivider code="0x06" />
       <BlogsSection />
-      <SectionDivider code="0x07" />
+      */}
+      <SectionDivider code="0x06" />
       <ContactUs />
-      <SectionDivider code="0x08" />
+      <SectionDivider code="0x07" />
       <Toaster position="bottom-right" />
     </main>
   )

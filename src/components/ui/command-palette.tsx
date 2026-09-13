@@ -3,7 +3,7 @@
 import { FC, useEffect, useState, useRef, useMemo } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useTheme } from 'next-themes'
-import { Search, User, Layers, Briefcase, FolderGit2, PenLine, Mail, Github, Linkedin, Twitter, FileDown, Sun, Moon, CornerDownLeft, SearchX, Globe } from 'lucide-react'
+import { Search, User, Layers, Briefcase, FolderGit2, Mail, Github, Linkedin, FileDown, Sun, Moon, CornerDownLeft, SearchX, Globe } from 'lucide-react'
 import { useSound } from '@/components/sound-provider'
 import { useLanguage } from '@/components/language-provider'
 
@@ -19,9 +19,9 @@ interface CommandItem {
 }
 
 const CATEGORY_LABELS: Record<Category, string> = {
-  navigation: 'Navigate',
+  navigation: 'Naviguer',
   actions: 'Actions',
-  socials: 'Connect',
+  socials: 'Contact',
 }
 
 export const CommandPalette: FC = () => {
@@ -71,48 +71,40 @@ export const CommandPalette: FC = () => {
     // Navigation
     {
       id: 'nav-about',
-      title: 'About',
-      subtitle: 'Profile & introduction',
+      title: 'Profil',
+      subtitle: 'Présentation & introduction',
       category: 'navigation',
       icon: <User className="h-4 w-4" />,
       action: () => handleNav('#about'),
     },
     {
       id: 'nav-skills',
-      title: 'Skills',
-      subtitle: 'Tech stack & tooling',
+      title: 'Compétences',
+      subtitle: 'Stack technique & outils',
       category: 'navigation',
       icon: <Layers className="h-4 w-4" />,
       action: () => handleNav('#skills'),
     },
     {
       id: 'nav-experience',
-      title: 'Experience',
-      subtitle: 'Work history & timeline',
+      title: 'Expérience',
+      subtitle: 'Parcours professionnel',
       category: 'navigation',
       icon: <Briefcase className="h-4 w-4" />,
       action: () => handleNav('#experience'),
     },
     {
       id: 'nav-projects',
-      title: 'Projects',
-      subtitle: 'Selected case studies',
+      title: 'Projets',
+      subtitle: 'Réalisations',
       category: 'navigation',
       icon: <FolderGit2 className="h-4 w-4" />,
       action: () => handleNav('#projects'),
     },
     {
-      id: 'nav-blogs',
-      title: 'Writing',
-      subtitle: 'Technical articles',
-      category: 'navigation',
-      icon: <PenLine className="h-4 w-4" />,
-      action: () => handleNav('#blogs'),
-    },
-    {
       id: 'nav-contact',
       title: 'Contact',
-      subtitle: 'Get in touch',
+      subtitle: 'Me contacter',
       category: 'navigation',
       icon: <Mail className="h-4 w-4" />,
       action: () => handleNav('#contact'),
@@ -130,6 +122,17 @@ export const CommandPalette: FC = () => {
       },
     },
     {
+      id: 'lang-fr',
+      title: t.commandPalette.langFrTitle,
+      subtitle: t.commandPalette.langFrSubtitle,
+      category: 'actions',
+      icon: <Globe className="h-4 w-4" />,
+      action: () => {
+        setLanguage('fr')
+        setIsOpen(false)
+      },
+    },
+    {
       id: 'lang-en',
       title: t.commandPalette.langEnTitle,
       subtitle: t.commandPalette.langEnSubtitle,
@@ -141,31 +144,9 @@ export const CommandPalette: FC = () => {
       },
     },
     {
-      id: 'lang-hi',
-      title: t.commandPalette.langHiTitle,
-      subtitle: t.commandPalette.langHiSubtitle,
-      category: 'actions',
-      icon: <Globe className="h-4 w-4" />,
-      action: () => {
-        setLanguage('hi')
-        setIsOpen(false)
-      },
-    },
-    {
-      id: 'lang-ja',
-      title: t.commandPalette.langJaTitle,
-      subtitle: t.commandPalette.langJaSubtitle,
-      category: 'actions',
-      icon: <Globe className="h-4 w-4" />,
-      action: () => {
-        setLanguage('ja')
-        setIsOpen(false)
-      },
-    },
-    {
       id: 'action-resume',
-      title: 'Download résumé',
-      subtitle: 'PDF · opens in new tab',
+      title: 'Télécharger le CV',
+      subtitle: 'PDF · nouvel onglet',
       category: 'actions',
       icon: <FileDown className="h-4 w-4" />,
       action: () => {
@@ -177,33 +158,33 @@ export const CommandPalette: FC = () => {
     {
       id: 'social-github',
       title: 'GitHub',
-      subtitle: 'github.com/Ashlok2003',
+      subtitle: 'github.com/sofian-ezahery',
       category: 'socials',
       icon: <Github className="h-4 w-4" />,
       action: () => {
-        window.open('https://github.com/Ashlok2003', '_blank')
+        window.open('https://github.com/sofian-ezahery', '_blank')
         setIsOpen(false)
       },
     },
     {
       id: 'social-linkedin',
       title: 'LinkedIn',
-      subtitle: 'linkedin.com/in/ashlok2003',
+      subtitle: 'linkedin.com/in/sofian-ezahery',
       category: 'socials',
       icon: <Linkedin className="h-4 w-4" />,
       action: () => {
-        window.open('https://www.linkedin.com/in/ashlok2003/', '_blank')
+        window.open('https://www.linkedin.com/in/sofian-ezahery/', '_blank')
         setIsOpen(false)
       },
     },
     {
-      id: 'social-twitter',
-      title: 'X',
-      subtitle: 'x.com/ashlok2003',
+      id: 'social-email',
+      title: 'Email',
+      subtitle: 'sofian.ezahery0@icloud.com',
       category: 'socials',
-      icon: <Twitter className="h-4 w-4" />,
+      icon: <Mail className="h-4 w-4" />,
       action: () => {
-        window.open('https://x.com/ashlok2003', '_blank')
+        window.open('mailto:sofian.ezahery0@icloud.com', '_blank')
         setIsOpen(false)
       },
     },
@@ -329,19 +310,17 @@ export const CommandPalette: FC = () => {
                           cmd.action()
                         }}
                         onMouseEnter={() => setSelectedIndex(idx)}
-                        className={`px-2.5 py-2.5 flex items-center justify-between rounded-lg cursor-pointer transition-colors duration-100 ${
-                          isSelected
-                            ? 'bg-brand-blue/10 text-foreground'
-                            : 'text-muted-foreground hover:bg-muted/40'
-                        }`}
+                        className={`px-2.5 py-2.5 flex items-center justify-between rounded-lg cursor-pointer transition-colors duration-100 ${isSelected
+                          ? 'bg-brand-blue/10 text-foreground'
+                          : 'text-muted-foreground hover:bg-muted/40'
+                          }`}
                       >
                         <div className="flex items-center gap-3 min-w-0">
                           <span
-                            className={`flex items-center justify-center h-8 w-8 rounded-md border shrink-0 transition-colors ${
-                              isSelected
-                                ? 'border-brand-blue/30 bg-brand-blue/10 text-brand-blue'
-                                : 'border-border/60 bg-muted/30 text-muted-foreground'
-                            }`}
+                            className={`flex items-center justify-center h-8 w-8 rounded-md border shrink-0 transition-colors ${isSelected
+                              ? 'border-brand-blue/30 bg-brand-blue/10 text-brand-blue'
+                              : 'border-border/60 bg-muted/30 text-muted-foreground'
+                              }`}
                           >
                             {cmd.icon}
                           </span>
@@ -369,7 +348,7 @@ export const CommandPalette: FC = () => {
               ) : (
                 <div className="py-12 text-center text-muted-foreground flex flex-col items-center gap-2.5">
                   <SearchX className="h-6 w-6 text-muted-foreground/40" />
-                  <span className="text-sm">No results for “{search}”</span>
+                  <span className="text-sm">Aucun résultat pour « {search} »</span>
                 </div>
               )}
             </div>
@@ -379,14 +358,14 @@ export const CommandPalette: FC = () => {
               <div className="flex items-center gap-3.5">
                 <span className="flex items-center gap-1">
                   <kbd className="px-1 py-0.5 border border-border rounded bg-muted/50 text-[9px]">↑↓</kbd>
-                  navigate
+                  naviguer
                 </span>
                 <span className="flex items-center gap-1">
                   <kbd className="px-1 py-0.5 border border-border rounded bg-muted/50 text-[9px]">↵</kbd>
-                  select
+                  sélectionner
                 </span>
               </div>
-              <span className="font-medium text-muted-foreground/60">ashlok.dev</span>
+              <span className="font-medium text-muted-foreground/60">sofian-ezahery.dev</span>
             </div>
           </motion.div>
         </div>

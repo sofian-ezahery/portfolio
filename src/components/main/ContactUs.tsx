@@ -95,7 +95,7 @@ export const ContactUs: FC = () => {
             <div className="space-y-4">
               {/* Email */}
               <a
-                href="mailto:chaudharyashlok@gmail.com"
+                href="mailto:sofian.ezahery0@icloud.com"
                 className="group flex items-start gap-3 hover:translate-x-0.5 transition-transform duration-200"
               >
                 <div className="shrink-0 mt-0.5 text-foreground">
@@ -103,13 +103,12 @@ export const ContactUs: FC = () => {
                 </div>
                 <div>
                   <span className="block text-sm font-medium text-foreground/90 group-hover:text-brand-blue transition-colors">
-                    chaudharyashlok@gmail.com
+                    sofian.ezahery0@icloud.com
                   </span>
                   <span className="block text-[11px] text-muted-foreground/70 mt-0.5">
                     {{
-                      en: 'Preferred for project inquiries',
-                      hi: 'परियोजना पूछताछ के लिए पसंदीदा',
-                      ja: 'プロジェクトに関するお問い合わせはこちら'
+                      fr: 'À privilégier pour toute demande',
+                      en: 'Preferred for any inquiry'
                     }[language]}
                   </span>
                 </div>
@@ -117,7 +116,7 @@ export const ContactUs: FC = () => {
 
               {/* Phone */}
               <a
-                href="tel:+917767012860"
+                href="tel:+33685574887"
                 className="group flex items-start gap-3 hover:translate-x-0.5 transition-transform duration-200"
               >
                 <div className="shrink-0 mt-0.5 text-foreground">
@@ -125,13 +124,12 @@ export const ContactUs: FC = () => {
                 </div>
                 <div>
                   <span className="block text-sm font-medium text-foreground/90 group-hover:text-brand-blue transition-colors">
-                    +91 77670 12860
+                    +33 6 85 57 48 87
                   </span>
                   <span className="block text-[11px] text-muted-foreground/70 mt-0.5">
                     {{
-                      en: 'Available Mon–Sat, 10am–7pm IST',
-                      hi: 'उपलब्ध: सोम-शनि, सुबह 10 से शाम 7 बजे IST',
-                      ja: '対応時間: 月〜土、10:00〜19:00（日本時間）'
+                      fr: 'Disponible du lundi au vendredi',
+                      en: 'Available Monday to Friday'
                     }[language]}
                   </span>
                 </div>
@@ -144,13 +142,12 @@ export const ContactUs: FC = () => {
                 </div>
                 <div>
                   <span className="block text-sm font-medium text-foreground/90">
-                    Mumbai, India
+                    France
                   </span>
                   <span className="block text-[11px] text-muted-foreground/70 mt-0.5">
                     {{
-                      en: 'Open to remote & hybrid roles',
-                      hi: 'रिमोट और हाइब्रिड भूमिकाओं के लिए तैयार',
-                      ja: 'リモートおよびハイブリッド勤務可能'
+                      fr: 'Ouvert au télétravail & hybride',
+                      en: 'Open to remote & hybrid roles'
                     }[language]}
                   </span>
                 </div>
@@ -165,9 +162,8 @@ export const ContactUs: FC = () => {
               </span>
               <span>
                 {{
-                  en: 'Currently available for new opportunities',
-                  hi: 'नए अवसरों के लिए वर्तमान में उपलब्ध',
-                  ja: '現在、新しい案件のご相談を受け付けております'
+                  fr: 'Actuellement disponible pour de nouvelles opportunités',
+                  en: 'Currently available for new opportunities'
                 }[language]}
               </span>
             </div>
@@ -187,7 +183,7 @@ export const ContactUs: FC = () => {
                   value={formData.name}
                   onChange={handleChange}
                   onKeyDown={handleKeyDown}
-                  placeholder="John Doe"
+                  placeholder="Jean Dupont"
                   required
                   className={inputClasses}
                 />
@@ -223,9 +219,8 @@ export const ContactUs: FC = () => {
                 onChange={handleChange}
                 onKeyDown={handleKeyDown}
                 placeholder={{
-                  en: 'Project collaboration, technical inquiry...',
-                  hi: 'परियोजना सहयोग, तकनीकी पूछताछ...',
-                  ja: '共同開発のご提案、技術的なご質問など...'
+                  fr: 'Collaboration, opportunité, question technique...',
+                  en: 'Collaboration, opportunity, technical question...'
                 }[language]}
                 required
                 className={inputClasses}
@@ -243,9 +238,8 @@ export const ContactUs: FC = () => {
                 onChange={handleChange}
                 onKeyDown={handleKeyDown}
                 placeholder={{
-                  en: 'Tell me about your project or idea...',
-                  hi: 'मुझे अपनी परियोजना या विचार के बारे में बताएं...',
-                  ja: 'プロジェクトのアイデアなどについてお聞かせください...'
+                  fr: 'Parlez-moi de votre projet ou de votre besoin...',
+                  en: 'Tell me about your project or your needs...'
                 }[language]}
                 required
                 rows={6}
@@ -273,11 +267,10 @@ export const ContactUs: FC = () => {
             </button>
 
             {status && (
-              <div className={`p-3 rounded text-center text-xs font-medium ${
-                status.includes('DELIVERED')
-                  ? 'bg-emerald-500/10 border border-emerald-500/20 text-emerald-400'
-                  : 'bg-destructive/10 border border-destructive/20 text-destructive'
-              }`}>
+              <div className={`p-3 rounded text-center text-xs font-medium ${status.includes('DELIVERED')
+                ? 'bg-emerald-500/10 border border-emerald-500/20 text-emerald-400'
+                : 'bg-destructive/10 border border-destructive/20 text-destructive'
+                }`}>
                 {status.includes('DELIVERED') ? `✓ ${t.contact.success}` : t.contact.error}
               </div>
             )}

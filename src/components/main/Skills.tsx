@@ -7,14 +7,14 @@ import { useLanguage } from '@/components/language-provider'
 import SectionWrapper from '@/components/ui/section-wrapper'
 
 const SKILLS_LIST =
-  'js,ts,python,cpp,go,rust,react,nextjs,nodejs,express,django,spring,graphql,fastapi,postgres,mongodb,redis,mysql,elasticsearch,rabbitmq,kafka,aws,gcp,cloudflare,docker,kubernetes,terraform,git,githubactions,jenkins,ansible,nginx,prometheus,grafana,linux,bash,postman,bun'
+  'linux,windows,bash,powershell,python,ansible,terraform,docker,kubernetes,aws,azure,githubactions,gitlab,jenkins,grafana,prometheus,git,github,mysql,postgres,mongodb,redis,nginx,vscode'
 
-// Curated core stack on mobile (24 = 3 rows of 8) so each icon renders larger
+// Curated core stack on mobile (16 = 2 rows of 8) so each icon renders larger
 const SKILLS_LIST_MOBILE =
-  'js,ts,python,go,react,nextjs,nodejs,graphql,postgres,mongodb,redis,kafka,aws,gcp,cloudflare,docker,kubernetes,terraform,git,githubactions,nginx,linux,bash,grafana'
+  'linux,bash,powershell,python,ansible,terraform,docker,kubernetes,aws,azure,githubactions,jenkins,grafana,prometheus,git,mysql'
 
 const SKILLICONS_URL_MOBILE = `https://skillicons.dev/icons?i=${SKILLS_LIST_MOBILE}&perline=8`
-const SKILLICONS_URL_DESKTOP = `https://skillicons.dev/icons?i=${SKILLS_LIST}&perline=19`
+const SKILLICONS_URL_DESKTOP = `https://skillicons.dev/icons?i=${SKILLS_LIST}&perline=12`
 
 export const Skills: FC = () => {
   const { t } = useLanguage()

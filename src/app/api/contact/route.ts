@@ -2,8 +2,6 @@ export const runtime = 'edge'
 
 import { Resend } from 'resend'
 
-const resend = new Resend(process.env.RESEND_API_KEY)
-
 interface FormData {
   name: string
   email: string
@@ -52,10 +50,18 @@ export async function POST(req: Request) {
   const sanitizedSubject = subject.replace(/[<>]/g, '')
   const sanitizedMessage = message.replace(/[<>]/g, '')
 
+  const apiKey = process.env.RESEND_API_KEY
+  if (!apiKey) {
+    console.error('RESEND_API_KEY is not configured')
+    return new Response(JSON.stringify({ error: 'Email service not configured' }), { status: 500 })
+  }
+
+  const resend = new Resend(apiKey)
+
   try {
     const { error } = await resend.emails.send({
-      from: `Contact Form <no-reply@ashlok.dev>`,
-      to: ['chaudharyashlok@gmail.com'],
+      from: `Contact Form <onboarding@resend.dev>`,
+      to: ['sofian.ezahery0@icloud.com'],
       replyTo: email,
       subject: sanitizedSubject,
       html: `
@@ -68,7 +74,7 @@ export async function POST(req: Request) {
     ${sanitizedMessage.replace(/\n/g, '<br />')}
   </blockquote>
   <hr />
-  <p style="font-size: 0.85rem; color: #666;">Sent via portfolio contact form on ashlok.dev</p>
+  <p style="font-size: 0.85rem; color: #666;">Envoyé via le formulaire de contact du portfolio</p>
 `,
     })
 

@@ -3,7 +3,7 @@
 import React, { createContext, useContext, useEffect, useState } from 'react'
 import { extraTranslations } from './translations-data'
 
-export type Language = 'en' | 'hi' | 'ja'
+export type Language = 'fr' | 'en'
 
 type TranslationDict = {
   nav: {
@@ -64,34 +64,98 @@ type TranslationDict = {
   }
   commandPalette: {
     searchPlaceholder: string
+    langFrTitle: string
+    langFrSubtitle: string
     langEnTitle: string
     langEnSubtitle: string
-    langHiTitle: string
-    langHiSubtitle: string
-    langJaTitle: string
-    langJaSubtitle: string
   }
-  extra: typeof extraTranslations.en
+  extra: typeof extraTranslations.fr
 }
 
 const translations: Record<Language, TranslationDict> = {
-  en: {
+  fr: {
     nav: {
-      about: 'about',
-      experience: 'experience',
-      projects: 'projects',
-      blogs: 'blogs',
+      about: 'profil',
+      experience: 'expérience',
+      projects: 'projets',
+      blogs: 'articles',
       contact: 'contact',
     },
     hero: {
-      title: 'Software Development Engineer',
-      description: 'Building scalable, reliable, production-grade systems and applications.',
+      title: 'Ingénieur DevOps / SRE',
+      description: 'Administrateur Systèmes & Réseaux spécialisé DevOps : automatisation CI/CD, cloud (AWS, Azure), conteneurisation et Infrastructure as Code. Passionné par la transformation IT et l\'optimisation continue.',
+      ctaTouch: 'Me contacter',
+      ctaResume: 'Voir le CV',
+      powerOn: 'Système : ON',
+      powerOff: 'Système : OFF',
+      location: 'France',
+      name: 'Sofian Ez-ahery',
+    },
+    skills: {
+      title: 'Compétences & Stack Technique',
+    },
+    experience: {
+      title: 'Expérience Professionnelle',
+    },
+    projects: {
+      title: 'Projets',
+      taglines: {
+        snappy: 'Plateforme SaaS de commande en ligne avec système de QR code.',
+        deeptab: 'Application de gestion de véhicule sur cluster Kubernetes HA opéré en GitOps.',
+        shopxindia: 'Infrastructure cloud-native automatisée et sécurisée.',
+        socialpedia: 'Système de commande optimisé réduisant le temps de traitement de 50%.',
+      },
+    },
+    resume: {
+      title: 'Mon CV',
+      subtitle: 'Consultez ou téléchargez mon CV professionnel complet.',
+      download: 'Télécharger le PDF',
+      view: 'Plein écran',
+    },
+    contact: {
+      title: 'Me Contacter',
+      heading: 'Construisons quelque chose ensemble',
+      subtitle: 'Une question ou envie de collaborer ? Laissez-moi un message et je vous répondrai.',
+      name: 'Nom',
+      email: 'Email',
+      subject: 'Sujet',
+      message: 'Message',
+      send: 'Envoyer',
+      sending: 'Envoi...',
+      success: 'Message envoyé avec succès !',
+      error: "Une erreur s'est produite. Veuillez réessayer.",
+    },
+    contributions: {
+      title: 'Contributions',
+      totalCount: 'contributions sur la dernière année',
+      loading: 'Chargement...',
+    },
+    commandPalette: {
+      searchPlaceholder: 'Rechercher une section ou une action…',
+      langFrTitle: 'Passer en français',
+      langFrSubtitle: 'Mode français',
+      langEnTitle: 'Switch to English',
+      langEnSubtitle: 'English language mode',
+    },
+    extra: extraTranslations.fr,
+  },
+  en: {
+    nav: {
+      about: 'profile',
+      experience: 'experience',
+      projects: 'projects',
+      blogs: 'articles',
+      contact: 'contact',
+    },
+    hero: {
+      title: 'DevOps / SRE Engineer',
+      description: 'Systems & Network Administrator specialized in DevOps: CI/CD automation, cloud (AWS, Azure), containerization and Infrastructure as Code. Passionate about IT transformation and continuous improvement.',
       ctaTouch: 'Get in Touch',
       ctaResume: 'View Resume',
-      powerOn: 'Power: ON',
-      powerOff: 'Power: OFF',
-      location: 'India',
-      name: 'Ashlok Chaudhary',
+      powerOn: 'System: ON',
+      powerOff: 'System: OFF',
+      location: 'France',
+      name: 'Sofian Ez-ahery',
     },
     skills: {
       title: 'Skills & Tech Stack',
@@ -100,19 +164,19 @@ const translations: Record<Language, TranslationDict> = {
       title: 'Work Experience',
     },
     projects: {
-      title: 'Featured Projects',
+      title: 'Projects',
       taglines: {
-        snappy: 'A developer-grade Chrome extension for screen capture, recording, and interactive image manipulation.',
-        deeptab: 'Context-aware, low-latency AI tab completion engine for VS Code with pluggable model support.',
-        shopxindia: 'An e-commerce platform offering end-to-end seller tools and order tracking.',
-        socialpedia: 'A lightweight social network platform for community building and media sharing.',
+        snappy: 'SaaS online ordering platform with a QR code system.',
+        deeptab: 'Vehicle management app on a HA Kubernetes cluster operated with GitOps.',
+        shopxindia: 'Automated and secured cloud-native infrastructure.',
+        socialpedia: 'Optimized ordering system cutting processing time by 50%.',
       },
     },
     resume: {
       title: 'My Resume',
-      subtitle: 'View or download my full professional resume for offline reference.',
+      subtitle: 'View or download my full professional resume.',
       download: 'Download PDF',
-      view: 'View Full Screen',
+      view: 'Full Screen',
     },
     contact: {
       title: 'Get In Touch',
@@ -134,150 +198,12 @@ const translations: Record<Language, TranslationDict> = {
     },
     commandPalette: {
       searchPlaceholder: 'Search for a section or action…',
-      langEnTitle: 'Change language to English',
+      langFrTitle: 'Passer en français',
+      langFrSubtitle: 'French language mode',
+      langEnTitle: 'Switch to English',
       langEnSubtitle: 'English language mode',
-      langHiTitle: 'Change language to Hindi',
-      langHiSubtitle: 'हिन्दी भाषा मोड (Hindi)',
-      langJaTitle: 'Change language to Japanese',
-      langJaSubtitle: '日本語の表示モード (Japanese)',
     },
     extra: extraTranslations.en,
-  },
-  hi: {
-    nav: {
-      about: 'परिचय',
-      experience: 'अनुभव',
-      projects: 'परियोजनाएं',
-      blogs: 'ब्लॉग',
-      contact: 'संपर्क',
-    },
-    hero: {
-      title: 'सॉफ्टवेयर डेवलपमेंट इंजीनियर',
-      description: 'स्केलेबल, विश्वसनीय और प्रोडक्शन-ग्रेड सिस्टम और अनुप्रयोगों का निर्माण।',
-      ctaTouch: 'संपर्क करें',
-      ctaResume: 'रिज्यूमे देखें',
-      powerOn: 'पावर: चालू',
-      powerOff: 'पावर: बंद',
-      location: 'भारत',
-      name: 'अश्लोक चौधरी',
-    },
-    skills: {
-      title: 'कौशल और तकनीक',
-    },
-    experience: {
-      title: 'कार्य अनुभव',
-    },
-    projects: {
-      title: 'प्रमुख परियोजनाएं',
-      taglines: {
-        snappy: 'स्क्रीन कैप्चर, रिकॉर्डिंग और इंटरैक्टिव इमेज मैनिपुलेशन के लिए एक डेवलपर-ग्रेड Chrome एक्सटेंशन।',
-        deeptab: 'प्लग करने योग्य मॉडल समर्थन के साथ VS Code के लिए संदर्भ-जागरूक, कम-विलंबता AI टैब कम्पलीशन इंजन।',
-        shopxindia: 'सैलर टूल्स और ऑर्डर ट्रैकिंग प्रदान करने वाला ई-कॉमर्स प्लेटफॉर्म।',
-        socialpedia: 'समुदाय निर्माण और मीडिया साझाकरण के लिए एक लाइटवेट सोशल नेटवर्क।',
-      },
-    },
-    resume: {
-      title: 'मेरा रिज्यूमे',
-      subtitle: 'ऑफ़लाइन संदर्भ के लिए मेरा पूरा व्यावसायिक रिज्यूमे देखें या डाउनलोड करें।',
-      download: 'पीडीएफ डाउनलोड करें',
-      view: 'फुल स्क्रीन देखें',
-    },
-    contact: {
-      title: 'संपर्क सूत्र',
-      heading: 'आइए मिलकर कुछ नया बनाएं',
-      subtitle: 'कोई प्रश्न है या साथ काम करना चाहते हैं? संदेश भेजें और मैं आपसे संपर्क करूंगा।',
-      name: 'नाम',
-      email: 'ईमेल',
-      subject: 'विषय',
-      message: 'संदेश',
-      send: 'संदेश भेजें',
-      sending: 'भेज रहा है...',
-      success: 'संदेश सफलतापूर्वक भेजा गया!',
-      error: 'कुछ गलत हो गया। कृपया पुन: प्रयास करें।',
-    },
-    contributions: {
-      title: 'योगदान',
-      totalCount: 'पिछले वर्ष में योगदान',
-      loading: 'लोड हो रहा है...',
-    },
-    commandPalette: {
-      searchPlaceholder: 'अनुभाग या क्रिया खोजें…',
-      langEnTitle: 'Change language to English',
-      langEnSubtitle: 'अंग्रेजी भाषा मोड',
-      langHiTitle: 'भाषा बदलकर हिन्दी करें',
-      langHiSubtitle: 'हिन्दी भाषा मोड (Hindi)',
-      langJaTitle: 'Change language to Japanese',
-      langJaSubtitle: 'जापानी भाषा मोड (Japanese)',
-    },
-    extra: extraTranslations.hi,
-  },
-  ja: {
-    nav: {
-      about: '自己紹介',
-      experience: '職歴',
-      projects: 'プロジェクト',
-      blogs: 'ブログ',
-      contact: 'お問い合わせ',
-    },
-    hero: {
-      title: 'ソフトウェア開発エンジニア',
-      description: 'スケーラブルで信頼性の高いプロダクションレベルのシステムとアプリケーションの構築。',
-      ctaTouch: 'お問い合わせ',
-      ctaResume: '履歴書を表示',
-      powerOn: '電源: ON',
-      powerOff: '電源: OFF',
-      location: 'インド',
-      name: 'アシュロック・チャウダリー',
-    },
-    skills: {
-      title: 'スキルと技術スタック',
-    },
-    experience: {
-      title: '職務経歴',
-    },
-    projects: {
-      title: '主なプロジェクト',
-      taglines: {
-        snappy: 'スクリーンキャプチャ、録画、インタラクティブな画像操作のための開発者向けChrome拡張機能。',
-        deeptab: 'プラグ可能なモデルをサポートする、VS Code向けのコンテキスト認識型・低遅延AIタブ補完エンジン。',
-        shopxindia: 'エンドツーエンドの販売者ツールと注文追跡を提供するEコマースプラットフォーム。',
-        socialpedia: 'コミュニティ構築とメディア共有のための軽量ソーシャルネットワーク。',
-      },
-    },
-    resume: {
-      title: '履歴書 / レジュメ',
-      subtitle: 'オフライン参照用に、私の完全な職務経歴書を表示またはダウンロードしてください。',
-      download: 'PDFをダウンロード',
-      view: '全画面表示',
-    },
-    contact: {
-      title: 'お問い合わせ',
-      heading: '一緒に素晴らしいものを作りましょう',
-      subtitle: 'ご質問やコラボレーションのご提案など、お気軽にお問い合わせください。',
-      name: 'お名前',
-      email: 'メールアドレス',
-      subject: '件名',
-      message: 'メッセージ',
-      send: '送信する',
-      sending: '送信中...',
-      success: 'メッセージが正常に送信されました！',
-      error: 'エラーが発生しました。もう一度お試しください。',
-    },
-    contributions: {
-      title: 'コントリビューション',
-      totalCount: '過去1年間のコントリビューション',
-      loading: '読み込み中...',
-    },
-    commandPalette: {
-      searchPlaceholder: 'セクションまたはアクションを検索…',
-      langEnTitle: 'Change language to English',
-      langEnSubtitle: '英語の表示モード',
-      langHiTitle: 'Change language to Hindi',
-      langHiSubtitle: 'ヒンディー語の表示モード (Hindi)',
-      langJaTitle: '言語を日本語に切り替える',
-      langJaSubtitle: '日本語の表示モード (Japanese)',
-    },
-    extra: extraTranslations.ja,
   },
 }
 
@@ -290,12 +216,12 @@ interface LanguageContextType {
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined)
 
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
-  const [language, setLanguageState] = useState<Language>('en')
+  const [language, setLanguageState] = useState<Language>('fr')
 
   // Load language preference from localStorage
   useEffect(() => {
     const saved = localStorage.getItem('language_pref') as Language
-    if (saved === 'en' || saved === 'hi' || saved === 'ja') {
+    if (saved === 'fr' || saved === 'en') {
       setLanguageState(saved)
     }
   }, [])

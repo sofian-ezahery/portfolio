@@ -11,7 +11,7 @@ import SectionWrapper from '@/components/ui/section-wrapper'
 
 export const BlogsSection: FC = () => {
   const [selectedBlog, setSelectedBlog] = useState<Blog | null>(null)
-  const { t, language } = useLanguage()
+  const { t } = useLanguage()
 
   const getBlogIcon = (id: number) => {
     switch (id) {
@@ -25,25 +25,13 @@ export const BlogsSection: FC = () => {
   const getBlogTag = (id: number) => {
     switch (id) {
       case 1:
-        return {
-          en: 'GraphQL · Caching',
-          hi: 'GraphQL · कैशिंग',
-          ja: 'GraphQL · キャッシュ'
-        }[language]
+        return 'CI/CD · GitHub Actions'
       case 2:
-        return 'WebSockets · WebRTC'
+        return 'Docker · Conteneurs'
       case 3:
-        return {
-          en: 'Encryption · S3',
-          hi: 'एन्क्रिप्शन · S3',
-          ja: '暗号化 · S3'
-        }[language]
+        return 'Terraform · IaC'
       default:
-        return {
-          en: 'Engineering',
-          hi: 'इंजीनियरिंग',
-          ja: 'エンジニアリング'
-        }[language]
+        return 'DevOps'
     }
   }
 
@@ -183,7 +171,7 @@ export const BlogsSection: FC = () => {
                 {/* Byline */}
                 <div className="flex items-center gap-3 mt-6">
                   <Image
-                    src="/ashlok.jpg"
+                    src="/sofian.jpg"
                     alt={t.hero.name}
                     width={40}
                     height={40}

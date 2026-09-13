@@ -9,15 +9,15 @@ import { useSound } from '@/components/sound-provider'
 import { useLanguage } from '@/components/language-provider'
 
 const tickerItems = [
-  { name: 'go', icon: 'go' },
-  { name: 'rust', icon: 'rust' },
-  { name: 'kubernetes', icon: 'kubernetes' },
-  { name: 'aws', icon: 'aws' },
-  { name: 'postgresql', icon: 'postgres' },
-  { name: 'django', icon: 'django' },
   { name: 'docker', icon: 'docker' },
+  { name: 'kubernetes', icon: 'kubernetes' },
   { name: 'terraform', icon: 'terraform' },
-  { name: 'graphql', icon: 'graphql' },
+  { name: 'ansible', icon: 'ansible' },
+  { name: 'aws', icon: 'aws' },
+  { name: 'azure', icon: 'azure' },
+  { name: 'linux', icon: 'linux' },
+  { name: 'githubactions', icon: 'githubactions' },
+  { name: 'grafana', icon: 'grafana' },
 ]
 
 export const Hero: FC = () => {
@@ -53,7 +53,7 @@ export const Hero: FC = () => {
 
   return (
     <section id="about" className="relative w-full bg-background transition-colors overflow-x-clip overflow-y-visible">
-      
+
       {/* Blueprint column grid — bounded, not edge-to-edge */}
       <div className="max-w-[880px] mx-auto grid grid-cols-1 min-[880px]:grid-cols-[40px_800px_40px] w-full min-h-[calc(100vh-64px)] relative">
         {/* Left Side Margin */}
@@ -103,7 +103,7 @@ export const Hero: FC = () => {
                 animate={{ pathLength: 1 }}
                 transition={{ duration: 1.2, ease: "easeInOut", delay: 0.4 }}
               />
-              
+
               {/* Isometric Cube representation */}
               <motion.path
                 d="M400,200 L550,275 L400,350 L250,275 Z"
@@ -126,7 +126,7 @@ export const Hero: FC = () => {
                 animate={{ pathLength: 1 }}
                 transition={{ duration: 1.6, ease: "easeInOut", delay: 0.9 }}
               />
-              
+
               {/* Projections & circles */}
               <motion.circle
                 cx="400" cy="275" r="40"
@@ -142,7 +142,7 @@ export const Hero: FC = () => {
                 animate={{ pathLength: 1 }}
                 transition={{ duration: 1.2, ease: "easeInOut", delay: 1.3 }}
               />
-              
+
               {/* Labels */}
               <text x="415" y="190" fill="currentColor" fontFamily="monospace" fontSize="10" letterSpacing="0.1em">FIG. 01</text>
               <text x="260" y="390" fill="currentColor" fontFamily="monospace" fontSize="9">SYS.V_15</text>
@@ -171,12 +171,12 @@ export const Hero: FC = () => {
                         <line x1="60" y1="60" x2="60" y2="12" stroke="currentColor" strokeWidth="1" strokeDasharray="3 3" />
                         <line x1="60" y1="60" x2="108" y2="60" stroke="currentColor" strokeWidth="1" strokeDasharray="3 3" />
                         <line x1="60" y1="60" x2="26" y2="94" stroke="currentColor" strokeWidth="1" strokeDasharray="3 3" />
-                        
+
                         {/* Nodes with pulsing/glow look */}
                         <circle cx="60" cy="12" r="3" fill="currentColor" />
                         <circle cx="108" cy="60" r="3" fill="currentColor" />
                         <circle cx="26" cy="94" r="3" fill="currentColor" />
-                        
+
                         {/* Outer server circle grid */}
                         <circle cx="60" cy="60" r="48" stroke="currentColor" strokeWidth="0.8" strokeDasharray="4 4" />
                       </svg>
@@ -184,8 +184,8 @@ export const Hero: FC = () => {
                   )}
                   <div className={`relative size-20 rounded-full overflow-hidden border-2 z-10 transition-all duration-300 ${lightsOn ? 'border-brand-blue shadow-[0_0_15px_rgba(59,130,246,0.3)] scale-105' : 'border-border'}`}>
                     <Image
-                      src="/ashlok.jpg"
-                      alt="Ashlok Chaudhary Profile Photo"
+                      src="/sofian.jpg"
+                      alt="Sofian Ez-ahery Profile Photo"
                       width={80}
                       height={80}
                       className="object-cover size-full scale-105"
@@ -240,7 +240,7 @@ export const Hero: FC = () => {
                 </button>
                 <a
                   href="/resume.pdf"
-                  download="Ashlok_Chaudhary_Resume.pdf"
+                  download="Sofian_Ezahery_CV.pdf"
                   className="px-4 sm:px-6 py-2.5 rounded-full font-mono text-[11px] sm:text-xs uppercase tracking-wider sm:tracking-widest border border-border hover:border-foreground/45 text-foreground hover:bg-muted/20 transition-all duration-300 flex items-center gap-2 font-semibold"
                 >
                   <FaFileDownload />
@@ -262,13 +262,13 @@ export const Hero: FC = () => {
                 animation: marquee 25s linear infinite;
               }
             `}</style>
-            
+
             {/* Box with Grid Outline & Gradient Fades */}
             <div className="relative border-y border-border bg-card/25 h-[42px] flex items-stretch overflow-hidden">
               {/* Fade gradients */}
               <div className="absolute inset-y-0 left-0 w-8 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
               <div className="absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
-              
+
               <div className="flex w-full overflow-hidden">
                 <div className="flex items-stretch gap-10 whitespace-nowrap shrink-0 animate-marquee">
                   {/* Render the list multiple times to ensure coverage */}

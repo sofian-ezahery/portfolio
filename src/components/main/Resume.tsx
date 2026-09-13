@@ -80,7 +80,7 @@ export const ResumeSection: FC = () => {
           {/* Full-width Grid-Stylish Download Button */}
           <a
             href="/resume.pdf"
-            download="Ashlok_Chaudhary_SDE.pdf"
+            download="Sofian_Ezahery_CV.pdf"
             className="w-full border-t border-border flex items-center justify-center gap-2.5 py-4 bg-muted/5 hover:bg-brand-blue/5 font-mono text-xs uppercase tracking-widest text-muted-foreground hover:text-brand-blue transition-all duration-200"
           >
             <FaDownload className="h-3.5 w-3.5" />

@@ -7,11 +7,8 @@ import { experienceData, Experience } from '@/constants'
 import { Plus, Minus, Briefcase } from 'lucide-react'
 import { useLanguage } from '@/components/language-provider'
 
-const getCompanyLogo = (company: string): string => {
-  const c = company.toLowerCase().trim()
-  if (c.includes('openleaf')) return '/openleaf_logo.png'
-  if (c.includes('whatbytes')) return '/whatbytes_logo.jpeg'
-  if (c.includes('talent corner')) return '/talent-corner-logo.png'
+const getCompanyLogo = (): string => {
+  // No local company logos yet — the Briefcase icon is used as a fallback.
   return ''
 }
 
@@ -104,7 +101,7 @@ export const Timeline: FC = () => {
                 >
                   <div className="flex items-start gap-4">
                     {(() => {
-                      const companyLogo = getCompanyLogo(exp.company)
+                      const companyLogo = getCompanyLogo()
                       return (
                         <div className="size-10 border border-border rounded-md bg-white flex items-center justify-center shrink-0 mt-0.5 overflow-hidden">
                           {companyLogo ? (

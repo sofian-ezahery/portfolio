@@ -1,67 +1,3 @@
-export interface Skill {
-  skill_name: string
-  Image: string
-  width: number
-  height: number
-  category: 'frontend' | 'backend' | 'database' | 'devops' | 'other'
-}
-
-export const skills: Skill[] = [
-  // Frontend
-  { skill_name: 'HTML5', Image: '/html.png', width: 80, height: 80, category: 'frontend' },
-  { skill_name: 'CSS', Image: '/css.png', width: 80, height: 80, category: 'frontend' },
-  { skill_name: 'JavaScript', Image: '/js.png', width: 65, height: 65, category: 'frontend' },
-  { skill_name: 'TypeScript', Image: '/ts.png', width: 80, height: 80, category: 'frontend' },
-  { skill_name: 'React', Image: '/react.png', width: 80, height: 80, category: 'frontend' },
-  { skill_name: 'Next.js', Image: '/next.png', width: 80, height: 80, category: 'frontend' },
-  { skill_name: 'Redux', Image: '/redux.png', width: 80, height: 80, category: 'frontend' },
-  { skill_name: 'Tailwind CSS', Image: '/tailwind.png', width: 80, height: 80, category: 'frontend' },
-
-  // Backend
-  { skill_name: 'Node.js', Image: '/node-js.png', width: 80, height: 80, category: 'backend' },
-  { skill_name: 'Express.js', Image: '/express.png', width: 80, height: 80, category: 'backend' },
-  { skill_name: 'Spring Boot', Image: '/spring-boot.png', width: 55, height: 55, category: 'backend' },
-  { skill_name: 'Rust', Image: '/rust.png', width: 70, height: 70, category: 'backend' },
-  { skill_name: 'Go', Image: '/go.png', width: 60, height: 60, category: 'backend' },
-
-  // Database
-  { skill_name: 'PostgreSQL', Image: '/postger.png', width: 70, height: 70, category: 'database' },
-  { skill_name: 'MySQL', Image: '/mysql.png', width: 70, height: 70, category: 'database' },
-  { skill_name: 'Prisma', Image: '/prisma.webp', width: 70, height: 70, category: 'database' },
-  { skill_name: 'GraphQL', Image: '/graphql.png', width: 80, height: 80, category: 'database' },
-
-  // DevOps / Cloud
-  { skill_name: 'Terraform', Image: '/terraform.png', width: 80, height: 80, category: 'devops' },
-  { skill_name: 'Docker', Image: '/docker.webp', width: 70, height: 70, category: 'devops' },
-  { skill_name: 'Kubernetes', Image: '/kubernetes.png', width: 50, height: 50, category: 'devops' },
-  { skill_name: 'AWS', Image: '/aws.png', width: 70, height: 70, category: 'devops' },
-  { skill_name: 'CloudFlare', Image: '/cloudflare.png', width: 80, height: 80, category: 'devops' },
-]
-
-export interface SocialLink {
-  name: string
-  href: string
-  label: string
-}
-
-export const socialLinks: SocialLink[] = [
-  {
-    name: 'GitHub',
-    href: 'https://github.com/Ashlok2003',
-    label: 'GitHub',
-  },
-  {
-    name: 'LinkedIn',
-    href: 'https://www.linkedin.com/in/ashlok2003/',
-    label: 'LinkedIn',
-  },
-  {
-    name: 'Twitter',
-    href: 'https://x.com/ashlok2003',
-    label: 'Twitter',
-  },
-]
-
 export interface Experience {
   id: number
   role: string
@@ -77,68 +13,33 @@ export interface Experience {
 export const experienceData: Experience[] = [
   {
     id: 0,
-    role: 'Software Development Engineer',
-    company: 'OpenLeaf',
-    location: 'Onsite - Mumbai, Maharashtra',
-    date: 'Aug 2026 - Current',
+    role: 'Administrateur Systèmes & Réseaux',
+    company: 'Teleperformance France',
+    location: 'Belfort, France',
+    date: 'Oct 2023 - Oct 2025',
     description:
-      'Owning backend and platform infrastructure end-to-end for a B2B/B2C logistics management platform, driving system design, reliability, and scale across enterprise retail integrations.',
+      "1 an en alternance dans le cadre de la formation Technicien Informatique OpenClassrooms (RNCP niveau 5), puis 1 an en CDI. Administration et automatisation du parc informatique.",
     achievements: [
-      'Leading design and rollout of a Go-based order orchestration service handling high-volume daily events across Blinkit, Swiggy Instamart, Zepto, and new marketplace integrations.',
-      'Owning deployment and infra provisioning on AWS for core backend services, improving release reliability.',
-      'Extending PostgreSQL-backed inventory and reporting systems to support higher order volume and new retail channels.',
-      'Mentoring backend interns on service architecture, code review standards, and PostgreSQL query optimization.',
-      'Driving incident response and postmortems for production reliability, reducing P1 mean-time-to-resolution.',
+      'Déploiement & automatisation du parc informatique (Windows, réseaux, imprimantes, serveurs).',
+      'Administration Active Directory, GPO et sécurité (conformité ISO 27001, RGPD).',
+      'Automatisation via scripts PowerShell et Bash, gestion des incidents et support N1/N2.',
+      'Contribution aux projets IT (migration, conformité) et rédaction de la documentation technique.',
     ],
-    tags: ['Go', 'Node.js', 'PostgreSQL', 'Redis', 'AWS', 'Microservices'],
+    tags: ['Windows Server', 'Active Directory', 'PowerShell', 'Bash', 'ISO 27001', 'RGPD'],
   },
   {
     id: 1,
-    role: 'Backend Developer Intern',
-    company: 'OpenLeaf',
-    location: 'Onsite - Mumbai, Maharashtra',
-    date: 'Mar 2026 - Jul 2026',
+    role: 'Technicien Informatique',
+    company: 'Bugbusters Group',
+    location: 'Bourgogne-Franche-Comté, France',
+    date: 'Mai 2023 - Oct 2023',
     description:
-      'Built high-performance backend services for a B2B/B2C logistics management platform that delivers end-to-end purchase order automation and supply chain orchestration across enterprise retail channels.',
+      "Déploiement et administration d'infrastructures IT, diagnostic avancé et gestion des incidents.",
     achievements: [
-      'Developed distributed PO automation pipelines in Go handling multi-channel order ingestion from platforms like Blinkit, Swiggy Instamart, and Zepto.',
-      'Engineered PostgreSQL-backed inventory sync services with Redis caching to handle real-time warehouse stock updates at low latency.',
-      'Built RESTful and event-driven Node.js microservices for B2B appointment scheduling, NDR tracking, and carrier webhook processing.',
-      'Implemented role-based access control (Admin, Warehouse, Seller) with JWT auth middleware across the multi-tenant dashboard API.',
-      'Optimized SQL query plans on large order tables (10M+ rows), reducing reporting query time by over 60% via composite indexing and materialized views.',
+      'Déploiement IT, administration des réseaux et des équipements.',
+      'Diagnostic avancé, gestion des incidents et documentation technique.',
     ],
-    tags: ['Go', 'Node.js', 'PostgreSQL', 'Redis', 'REST APIs', 'Microservices', 'B2B Logistics'],
-    translationKey: 'openleafIntern',
-  },
-  {
-    id: 2,
-    role: 'Backend Developer Intern',
-    company: 'WhatBytes',
-    location: 'Remote',
-    date: 'Sep 2025 - Mar 2026',
-    description: 'Designed and implemented scalable backend systems, LLM integrations, and automated analytics pipelines.',
-    achievements: [
-      'Engineered a comprehensive ad analytics flow and LinkedIn ads scraper, enabling automated data extraction and deep performance insights.',
-      'Built robust media processing pipelines integrated with OpenAI Whisper for automated audio/video transcription and analysis.',
-      'Integrated LLMs and OpenSearch to power advanced semantic search and AI-driven data processing capabilities.',
-      'Architected and deployed end-to-end CI/CD pipelines to automate testing and deployments, ensuring high reliability.',
-    ],
-    tags: ['Django', 'Python', 'LLMs', 'OpenSearch', 'OpenAI Whisper', 'CI/CD', 'Web Scraping'],
-  },
-  {
-    id: 3,
-    role: 'Full Stack Developer Intern',
-    company: 'Talent Corner HR Services',
-    location: 'Onsite - Mumbai, Maharashtra',
-    date: 'Apr 2025 - Jul 2025',
-    description: 'Engineered high-performance lead management and data scraping pipelines.',
-    achievements: [
-      'Engineered a scalable lead management and verification platform using Node.js and MySQL, streamlining data enrichment pipelines.',
-      'Developed intuitive, reusable dashboard modules in React, delivering real-time business metrics and actionable analytics.',
-      'Implemented a clean, modular architecture using controller-service-repository patterns to ensure high maintainability.',
-      'Set up CI/CD pipelines to automate the build, test, and deployment processes, accelerating feature delivery.',
-    ],
-    tags: ['Node.js', 'MySQL', 'React', 'Data Scraping', 'Clean Architecture', 'CI/CD'],
+    tags: ['Réseaux', 'Support IT', 'Diagnostic', 'Documentation'],
   },
 ]
 
@@ -158,82 +59,30 @@ export interface Project {
 
 export const projectsData: Project[] = [
   {
-    title: 'Deeptab',
-    description: 'Context-aware, low-latency AI tab completion engine for VS Code — provider-agnostic, streaming code suggestions as ghost text.',
-    date: '06.2026',
-    problem: 'Existing tools like Copilot and Cursor Tab are closed-source, locking users into specific models, pricing, and opaque context pipelines with no way to self-host or control cost.',
-    approach: 'Built a provider-agnostic completion pipeline with SSE streaming, pending-completion replay, continuation prediction, and reactive configuration — targeting sub-200ms perceived latency.',
-    infra: 'TypeScript · VS Code Extension API · SSE Streaming · OpenRouter / Groq / Fireworks APIs · AbortController Cancellation',
-    challenge: 'Achieving sub-200ms keystroke-to-suggestion latency while managing concurrent request cancellation and editor state synchronization across asynchronous streams.',
-    outcome: 'Shipped a working inline completion provider with pluggable model support, local state replay, continuation matching, and a phased roadmap for context gathering, FIM prompting, and caching.',
-    github: 'https://github.com/Ashlok2003/deeptab',
-    live: 'https://github.com/Ashlok2003/deeptab',
-    tags: ['TypeScript', 'VS Code API', 'SSE', 'LLMs', 'OpenRouter'],
+    title: 'Autopilot',
+    description: 'Application de gestion intelligente de véhicule (Next.js + mobile) déployée sur un cluster Kubernetes HA auto-hébergé, provisionné et opéré en GitOps.',
+    date: '03.2026',
+    problem: 'Déployer une application full-stack sur une infrastructure bare-metal fiable et hautement disponible, sans dépendre d\'un cloud managé, tout en gardant un déploiement reproductible et automatisé.',
+    approach: 'Provisionnement de 5 VMs Ubuntu sur Proxmox avec Terraform (HCL, Cloud-Init), configuration via Ansible (Keepalived, K3s), et déploiement continu en GitOps avec ArgoCD (App of Apps) et Kustomize.',
+    infra: 'Proxmox · Terraform · Ansible · K3s HA (etcd/Raft) · ArgoCD (GitOps) · MetalLB · Ingress Nginx · Cert-Manager · Prometheus · Grafana · Loki · Velero · HPA · Docker',
+    challenge: 'Mettre en place la haute disponibilité du control-plane (quorum etcd sur 3 masters, IP virtuelle Keepalived) et fiabiliser le déploiement Helm/Kustomize dans ArgoCD.',
+    outcome: 'Cluster K3s hautement disponible auto-géré : montée en charge automatique (HPA jusqu\'à 10 pods), certificats SSL automatisés, supervision Prometheus/Grafana/Loki et sauvegardes Velero.',
+    github: 'https://github.com/sofian-ezahery/Autopilot',
+    live: 'https://autopilot.ovh/',
+    tags: ['Terraform', 'Ansible', 'Kubernetes', 'ArgoCD', 'Docker', 'Prometheus', 'Grafana', 'Next.js'],
   },
   {
-    title: 'Snappy Pro',
-    description: 'A developer-grade Chrome Extension for screen capture, tab video recording, GIF encoding, and professional image editing — all in-browser.',
-    date: '02.2026',
-    problem: 'Standard browser capture tools lack developer-grade features like annotation overlays, per-pixel image adjustments, channel curves editing, and optimized GIF encoding.',
-    approach: 'Built a Manifest V3 Chrome Extension with multi-mode capture (viewport, full-page scroll-stitch, element selector, custom region), offscreen rendering for recording, and a pure-JS image processing engine.',
-    infra: 'JavaScript · Chrome Extension Manifest V3 · HTML5 Canvas API · WebRTC (Tab Capture) · Offscreen Documents · Custom LZW GIF Encoder',
-    challenge: 'Running high-fidelity GIF encoding (palette generation, LZW compression) and per-pixel image adjustments (exposure, curves, sharpening) without blocking the active tab or dropping capture frames.',
-    outcome: 'Shipped a lightweight extension with 5 capture modes, a full annotation canvas, 12 one-click filters, interactive RGB channel curves, and high-quality WebM/GIF export via offscreen rendering.',
-    github: 'https://github.com/Ashlok2003/Snappy',
-    live: 'https://github.com/Ashlok2003/Snappy',
-    tags: ['JavaScript', 'Chrome Extension API', 'Canvas API', 'WebRTC'],
-  },
-  {
-    title: 'ShopXIndia',
-    description: 'A microservices-based e-commerce platform built on AWS Fargate with full container observability.',
-    date: '02.2024',
-    problem: 'Monolithic commerce systems couple deployment boundaries and complicate backend scaling.',
-    approach: 'Designed domain-bounded microservices unified behind a federated GraphQL gateway.',
-    infra: 'AWS ECS Fargate · RDS · ElastiCache · CloudFront · Cognito · S3 · CodePipeline',
-    challenge: 'Resolving service discovery and securing token propagation across the federated service mesh.',
-    outcome: 'Decoupled services into isolated, auto-scaling deploy units sharing a single typed API schema.',
-    github: 'https://github.com/Ashlok2003/ShopxIndia',
-    live: 'https://github.com/Ashlok2003/ShopxIndia',
-    tags: ['Go', 'GraphQL', 'AWS ECS', 'Fargate', 'Docker', 'PostgreSQL'],
-  },
-  {
-    title: 'SocialPedia',
-    description: 'MERN stack social connection platform incorporating real-time messaging and media calls.',
-    date: '04.2025',
-    problem: 'Syncing live user presence status and chat history with low frontend layout jitter.',
-    approach: 'Integrated WebSockets for persistent user messaging and WebRTC for direct audio/video streams.',
-    infra: 'React · Node.js · Express · MongoDB · Socket.io · WebRTC · Redux Toolkit',
-    challenge: 'Handling websocket connection drops gracefully and managing signaling servers.',
-    outcome: 'Supports concurrent message broadcasts under 80ms latency and high-fidelity media connection.',
-    github: 'https://github.com/Ashlok2003/Socialpedia',
-    live: 'https://socialpedia-tau.vercel.app/',
-    tags: ['React', 'Node.js', 'MongoDB', 'Socket.io', 'WebRTC', 'Redux'],
-  },
-  {
-    title: 'FileShareX',
-    description: 'Direct secure file sharing app providing instant download codes and QR generators.',
-    date: '03.2025',
-    problem: 'Sharing large files securely without forcing users to register or pay storage fees.',
-    approach: 'Created automatic expiring uploads mapped to one-time token access codes.',
-    infra: 'React · Node.js · MongoDB · Express · Nodemailer (SMTP) · QR-code API',
-    challenge: 'Preventing disk space exhaustion on local servers while handling concurrent uploads.',
-    outcome: 'Fully automated cleanups of expired files with direct file encryption.',
-    github: 'https://github.com/Ashlok2003/File-Sharer',
-    live: 'https://file-sharer-sepia.vercel.app/',
-    tags: ['React', 'Node.js', 'MongoDB', 'SMTP', 'File APIs'],
-  },
-  {
-    title: 'Scheduly.AI',
-    description: 'Conversational scheduler client using AI agents to manage calendars.',
-    date: '12.2024',
-    problem: 'Traditional booking forms require multi-step calendars, leading to high abandonment rates.',
-    approach: 'Leveraged natural language processing to extract availability choices and confirm bookings.',
-    infra: 'React · Node.js · OpenRouter API · Google Calendar API · TailwindCSS',
-    challenge: 'Converting ambiguous text (e.g. "next Monday afternoon") into accurate ISO dates.',
-    outcome: 'Booking completes inside a single conversational window synced instantly to Google Calendar.',
-    github: 'https://github.com/Ashlok2003/Scheduly.AI',
-    live: 'https://scheduly-ai-client.onrender.com/',
-    tags: ['React', 'Node.js', 'OpenAI API', 'Google Calendar API'],
+    title: 'QResto',
+    description: 'Plateforme SaaS de commande en ligne avec système de QR code, déployée sur une infrastructure cloud-native.',
+    date: '12.2025',
+    problem: 'Les restaurants ont besoin d\'un système de commande rapide et sans contact, réduisant le temps de traitement et la charge du personnel.',
+    approach: 'Développement d\'une application web full-stack (No-Code) de commande en ligne avec génération de QR codes, déployée avec un pipeline CI/CD automatisé.',
+    infra: 'Next.js · Vercel · CI/CD · Sentry (monitoring) · QR Code',
+    challenge: 'Automatiser le déploiement, garantir la fiabilité de l\'infrastructure et mettre en place un monitoring efficace tout en sécurisant la plateforme.',
+    outcome: 'Réduction du temps de traitement des commandes de 50%, avec une infrastructure cloud-native automatisée, monitorée via Sentry et sécurisée.',
+    github: 'https://github.com/sofian-ezahery',
+    live: 'https://qresto-one.vercel.app/',
+    tags: ['Next.js', 'Vercel', 'CI/CD', 'Sentry', 'DevOps', 'SRE'],
   },
 ]
 
@@ -248,23 +97,23 @@ export interface Blog {
 export const blogsData: Blog[] = [
   {
     id: 1,
-    title: 'Scaling E-Commerce to 10K RPS with GraphQL Federation',
-    excerpt: 'How I decomposed a monolithic storefront into federated subgraphs, implemented distributed caching, and achieved sub-100ms P99 latency at scale.',
-    date: '10.2025',
-    content: `When ShopXIndia outgrew its monolithic REST API, I led the migration to a federated GraphQL architecture using Apollo Federation v2. The system was decomposed into five domain-aligned subgraphs — catalog, inventory, orders, users, and payments — each independently deployable and owned by separate teams.\n\nThe critical challenge was query performance. A single storefront page could resolve data across three subgraphs. I implemented a multi-tier caching strategy: Redis for entity-level caching with 30s TTL, DataLoader for request-scoped batching to eliminate N+1 queries, and Cloudflare edge caching for anonymous catalog requests.\n\nAuthentication was handled via a custom gateway plugin that validates JWTs at the router level and propagates user context to subgraphs through headers, avoiding redundant token verification. For observability, I instrumented every resolver with OpenTelemetry spans, feeding into Grafana dashboards that track per-subgraph latency, error rates, and cache hit ratios.\n\nThe result: P99 latency dropped from 1.2s to 87ms, the system comfortably handles 10K requests per second during flash sales, and deployment frequency increased from weekly to multiple times per day per service.`,
+    title: 'Automatiser un déploiement avec un pipeline CI/CD',
+    excerpt: 'Comment mettre en place un pipeline CI/CD simple avec GitHub Actions pour automatiser les tests et le déploiement continu d\'une application.',
+    date: '11.2025',
+    content: `Lors de mon projet QResto, j'ai voulu supprimer les déploiements manuels, sources d'erreurs et de perte de temps. J'ai donc mis en place un pipeline CI/CD avec GitHub Actions.\n\nLe principe est simple : à chaque push sur la branche principale, un workflow se déclenche. Il installe les dépendances, exécute les tests, construit l'application, puis la déploie automatiquement sur Vercel. Chaque étape est décrite dans un fichier YAML versionné avec le code.\n\nL'intérêt est double : on gagne en fiabilité (les tests bloquent les régressions avant la mise en production) et en rapidité (le déploiement passe de plusieurs minutes manuelles à un processus totalement automatisé).\n\nAu-delà de l'outil, la vraie valeur du CI/CD est culturelle : livrer petit, livrer souvent, et détecter les problèmes au plus tôt. C'est le socle de toute démarche DevOps.`,
   },
   {
     id: 2,
-    title: 'Building Real-Time Infrastructure: WebSockets at Scale',
-    excerpt: 'Architecture decisions behind a real-time messaging system supporting 50K concurrent connections with presence, typing indicators, and WebRTC signaling.',
-    date: '04.2025',
-    content: `SocialPedia required real-time capabilities that went far beyond basic chat — presence tracking, typing indicators, read receipts, live notifications, and peer-to-peer video calling via WebRTC signaling.\n\nI architected the real-time layer using a horizontally scaled WebSocket cluster backed by Redis Pub/Sub for cross-instance message fanout. Each Socket.IO server instance maintains local connection state, while Redis handles room-level broadcasting. This allows us to add WebSocket nodes behind a load balancer without sticky sessions — connections are stateless at the infrastructure level.\n\nFor presence, I implemented a heartbeat-based system where clients send a ping every 15 seconds. Absence of two consecutive pings triggers an offline event propagated to all friends via Redis. Typing indicators use a debounced emit pattern — the client sends a "typing" event, and the server auto-expires it after 3 seconds if no follow-up arrives.\n\nWebRTC signaling was the most complex piece. I built a custom signaling server that handles offer/answer exchange and ICE candidate trickling through the existing WebSocket channel, eliminating the need for a separate signaling infrastructure. TURN server fallback is configured for users behind symmetric NATs.\n\nAt peak, the system sustains 50K concurrent WebSocket connections across 4 nodes with a median message delivery latency of 12ms.`,
+    title: 'Docker : conteneuriser une application pas à pas',
+    excerpt: 'Les bases de la conteneurisation avec Docker : Dockerfile, images, conteneurs et bonnes pratiques pour un environnement reproductible.',
+    date: '09.2025',
+    content: `Docker résout un problème classique : « ça marche sur ma machine ». En empaquetant une application et ses dépendances dans un conteneur, on obtient un environnement identique du poste de développement jusqu'à la production.\n\nTout commence par un Dockerfile : on part d'une image de base légère, on copie le code, on installe les dépendances, puis on définit la commande de démarrage. À partir de ce fichier, on construit une image, qui devient un modèle réutilisable pour lancer autant de conteneurs que nécessaire.\n\nQuelques bonnes pratiques que j'applique : utiliser des images de base minimales, tirer parti du cache des couches en ordonnant bien les instructions, et adopter le multi-stage build pour réduire la taille finale de l'image.\n\nLa conteneurisation est la première marche vers l'orchestration avec Kubernetes, que j'explore actuellement.`,
   },
   {
     id: 3,
-    title: 'Zero-Trust File Sharing: End-to-End Encryption in the Browser',
-    excerpt: 'Implementing client-side AES-256-GCM encryption, pre-signed S3 URLs, and ephemeral access links for a file sharing platform with zero server-side trust.',
-    date: '03.2025',
-    content: `FileShareX was designed around a zero-trust principle: the server should never have access to plaintext file contents. Every file is encrypted client-side using the Web Crypto API with AES-256-GCM before upload.\n\nThe encryption flow works as follows: the browser generates a random 256-bit key and a 96-bit IV per file. The file is encrypted in streaming chunks (64KB buffers) to handle large files without memory pressure. The encrypted blob is uploaded directly to S3 via a pre-signed PUT URL — the server never touches the file bytes. The decryption key is embedded in the URL fragment (after the #), which browsers never send to servers.\n\nFor sharing, I implemented three mechanisms: direct links with the key fragment, QR codes encoding the full URL, and email-based sharing where the recipient gets a link that prompts for a PIN (the PIN derives the decryption key via PBKDF2 with 100K iterations). Ephemeral links auto-expire after a configurable TTL or download count using S3 object lifecycle policies and a Lambda function that revokes pre-signed URLs.\n\nThe architecture uses pre-signed URLs for both upload and download, meaning S3 bandwidth costs are the only storage expense — no application-layer proxy needed. File metadata (name, size, expiry, share method) is stored in MongoDB, but never the encryption key.`,
+    title: 'Infrastructure as Code avec Terraform : premiers pas',
+    excerpt: 'Pourquoi et comment décrire son infrastructure cloud sous forme de code versionné, reproductible et automatisable avec Terraform.',
+    date: '07.2025',
+    content: `L'Infrastructure as Code (IaC) consiste à décrire ses ressources cloud dans des fichiers de configuration plutôt que de les créer manuellement via une console web. Terraform est l'un des outils de référence pour cela.\n\nLe fonctionnement repose sur des fichiers déclaratifs : on décrit l'état souhaité de l'infrastructure (serveurs, réseaux, bases de données), et Terraform calcule les actions nécessaires pour l'atteindre. La commande plan montre les changements avant de les appliquer, ce qui évite les mauvaises surprises.\n\nLes bénéfices sont concrets : l'infrastructure devient versionnée dans Git, reproductible à l'identique entre environnements, et documentée par le code lui-même. Fini les configurations « à la main » impossibles à retracer.\n\nJe continue à monter en compétence sur Terraform et Ansible pour automatiser de bout en bout le provisionnement et la configuration.`,
   },
 ]

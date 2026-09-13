@@ -2,16 +2,11 @@
 
 import { FC } from "react";
 import { motion } from "framer-motion";
-import { FaLinkedin, FaTwitter, FaGithub } from "react-icons/fa";
+import { FaLinkedin, FaEnvelope, FaGithub } from "react-icons/fa";
 import { Heart, ChevronUp, Globe } from "lucide-react";
-import Script from "next/script";
-
 import { useLanguage, Language } from "@/components/language-provider";
 import { useSound } from "@/components/sound-provider";
 import { CrowdCanvas } from "@/components/main/CrowdCanvas";
-
-// DMCA badge ID from dmca.com dashboard
-const DMCA_ID = "6dfe1037-1892-42c0-8901-2a29faa4ee9e";
 
 export const Footer: FC = () => {
   const { language, setLanguage, t } = useLanguage();
@@ -19,19 +14,19 @@ export const Footer: FC = () => {
 
   const socialLinks = [
     {
-      href: "https://github.com/Ashlok2003",
+      href: "https://github.com/sofian-ezahery",
       icon: <FaGithub className="w-3.5 h-3.5" />,
       label: "GitHub",
     },
     {
-      href: "https://www.linkedin.com/in/ashlok2003/",
+      href: "https://www.linkedin.com/in/sofian-ezahery/",
       icon: <FaLinkedin className="w-3.5 h-3.5" />,
       label: "LinkedIn",
     },
     {
-      href: "https://x.com/ashlok2003",
-      icon: <FaTwitter className="w-3.5 h-3.5" />,
-      label: "Twitter",
+      href: "mailto:sofian.ezahery0@icloud.com",
+      icon: <FaEnvelope className="w-3.5 h-3.5" />,
+      label: "Email",
     },
   ];
 
@@ -82,7 +77,7 @@ export const Footer: FC = () => {
                 <span className="flex items-center px-2 text-muted-foreground/40 select-none">
                   <Globe className="w-3 h-3" />
                 </span>
-                {(["en", "hi", "ja"] as Language[]).map((lang) => {
+                {(["fr", "en"] as Language[]).map((lang) => {
                   const isActive = language === lang;
                   return (
                     <button
@@ -91,11 +86,10 @@ export const Footer: FC = () => {
                         playKeystroke("standard");
                         setLanguage(lang);
                       }}
-                      className={`relative px-2.5 py-1.5 transition-colors duration-300 select-none ${
-                        isActive
-                          ? "text-brand-blue"
-                          : "text-muted-foreground hover:text-foreground hover:bg-muted/30"
-                      }`}
+                      className={`relative px-2.5 py-1.5 transition-colors duration-300 select-none ${isActive
+                        ? "text-brand-blue"
+                        : "text-muted-foreground hover:text-foreground hover:bg-muted/30"
+                        }`}
                     >
                       {isActive && (
                         <motion.span
@@ -108,7 +102,7 @@ export const Footer: FC = () => {
                           }}
                         />
                       )}
-                      {lang === "en" ? "EN" : lang === "hi" ? "हि" : "日"}
+                      {lang === "fr" ? "FR" : "EN"}
                     </button>
                   );
                 })}
@@ -122,9 +116,8 @@ export const Footer: FC = () => {
                 <span>
                   {
                     {
+                      fr: "Haut de page",
                       en: "Back to Top",
-                      hi: "ऊपर जाएं",
-                      ja: "トップに戻る",
                     }[language]
                   }
                 </span>
@@ -145,7 +138,7 @@ export const Footer: FC = () => {
             />
           </div>
 
-          {/* Bottom strip — copyright + DMCA, anchored to the bottom of the band */}
+          {/* Bottom strip — copyright, anchored to the bottom of the band */}
           <div className="shrink-0 border-t border-border bg-background px-6 py-2.5 flex items-center justify-between gap-4 text-[11px] text-muted-foreground/50 font-mono tracking-wide">
             <span className="flex flex-wrap items-center gap-x-2 gap-y-1">
               <span>
@@ -155,9 +148,8 @@ export const Footer: FC = () => {
               <span className="hidden sm:flex items-center gap-1">
                 {
                   {
+                    fr: "Conçu avec",
                     en: "Built with",
-                    hi: "निर्मित:",
-                    ja: "開発ツール:",
                   }[language]
                 }
                 <Heart className="w-2.5 h-2.5 text-rose-500/60 fill-rose-500/60" />{" "}
@@ -165,23 +157,6 @@ export const Footer: FC = () => {
               </span>
             </span>
 
-            {/* DMCA badge */}
-            <a
-              href={`//www.dmca.com/Protection/Status.aspx?ID=${DMCA_ID}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              title="DMCA.com Protection Status"
-              className="dmca-badge inline-flex items-center opacity-70 hover:opacity-100 transition-opacity duration-200 shrink-0"
-            >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={`https://images.dmca.com/Badges/dmca-badge-w200-5x1-08.png?ID=${DMCA_ID}`}
-                alt="DMCA.com Protection Status"
-                width={150}
-                height={30}
-                className="h-[24px] w-auto"
-              />
-            </a>
           </div>
         </div>
 
@@ -193,10 +168,6 @@ export const Footer: FC = () => {
           </div>
         </div>
       </div>
-      <Script
-        src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js"
-        strategy="lazyOnload"
-      />
     </footer>
   );
 };

@@ -27,7 +27,6 @@ export function Navbar() {
     { name: t.nav.about, link: '#about' },
     { name: t.nav.experience, link: '#experience' },
     { name: t.nav.projects, link: '#projects' },
-    { name: t.nav.blogs, link: '#blogs' },
     { name: t.nav.contact, link: '#contact' },
   ]
 
@@ -68,8 +67,8 @@ export function Navbar() {
               <div className="absolute -inset-1.5 bg-gradient-to-r from-brand-blue/30 to-violet-600/30 rounded-full blur opacity-0 group-hover:opacity-100 transition duration-500" />
               <div className="relative size-8 rounded-full border border-border/80 overflow-hidden flex items-center justify-center bg-muted">
                 <Image
-                  src="/ashlok.jpg"
-                  alt="Ashlok Chaudhary"
+                  src="/sofian.jpg"
+                  alt="Sofian Ez-ahery"
                   width={32}
                   height={32}
                   className="size-full object-cover transition-transform duration-500 group-hover:scale-110"
@@ -119,13 +118,13 @@ export function Navbar() {
               className="hidden min-[880px]:flex items-center gap-2 px-3 py-1.5 border border-border/60 rounded-full bg-background/20 backdrop-blur-sm font-mono text-[10px] text-muted-foreground hover:bg-muted/40 hover:border-brand-blue/30 hover:text-foreground transition-all duration-300 shadow-sm active:scale-[0.97]"
             >
               <Search className="h-3.5 w-3.5" />
-              <span>{language === 'hi' ? 'खोजें' : language === 'ja' ? '検索' : 'Search'}</span>
+              <span>{language === 'fr' ? 'Rechercher' : 'Search'}</span>
               <kbd className="px-1.5 py-0.5 border border-border/60 rounded bg-muted/50 font-sans text-[8px] opacity-75">Ctrl K</kbd>
             </button>
 
             {/* GitHub Repo link - Desktop Only */}
             <a
-              href="https://github.com/Ashlok2003/portfolio"
+              href="https://github.com/sofian-ezahery"
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => playKeystroke('standard')}
@@ -230,24 +229,24 @@ export function Navbar() {
               className="flex items-center gap-3 px-4 py-2.5 border border-border/65 rounded-full text-[11px] text-muted-foreground bg-background/30 hover:bg-muted/40 hover:text-foreground transition-all w-full"
             >
               <Search className="h-4 w-4" />
-              <span>{language === 'hi' ? 'खोजें (Ctrl+K)' : language === 'ja' ? '検索 (Ctrl+K)' : 'Search (Ctrl+K)'}</span>
+              <span>{language === 'fr' ? 'Rechercher (Ctrl+K)' : 'Search (Ctrl+K)'}</span>
             </button>
 
             {/* Mobile Language Selector */}
             {mounted && (
               <div className="flex flex-col gap-1.5">
-                <span className="text-[9px] uppercase tracking-wider text-muted-foreground/60 font-bold font-mono">Language</span>
-                <div className="grid grid-cols-3 gap-1 p-1 border border-border/60 rounded-full bg-background/20 backdrop-blur-sm">
-                  {(['en', 'hi', 'ja'] as Language[]).map((lang) => (
+                <span className="text-[9px] uppercase tracking-wider text-muted-foreground/60 font-bold font-mono">{language === 'fr' ? 'Langue' : 'Language'}</span>
+                <div className="grid grid-cols-2 gap-1 p-1 border border-border/60 rounded-full bg-background/20 backdrop-blur-sm">
+                  {(['fr', 'en'] as Language[]).map((lang) => (
                     <button
                       key={`mobile-lang-${lang}`}
                       onClick={() => toggleLang(lang)}
                       className={`py-1.5 rounded-full font-mono text-[10px] font-bold transition-all ${language === lang
-                          ? 'bg-black dark:bg-brand-blue text-white shadow-sm'
-                          : 'text-muted-foreground hover:text-foreground hover:bg-muted/30'
+                        ? 'bg-black dark:bg-brand-blue text-white shadow-sm'
+                        : 'text-muted-foreground hover:text-foreground hover:bg-muted/30'
                         }`}
                     >
-                      {lang === 'en' ? 'English' : lang === 'hi' ? 'हिन्दी' : '日本語'}
+                      {lang === 'fr' ? 'Français' : 'English'}
                     </button>
                   ))}
                 </div>
@@ -257,7 +256,7 @@ export function Navbar() {
             {/* Mobile Preferences (Theme, Sound, GitHub) */}
             {mounted && (
               <div className="flex items-center justify-between pt-3 border-t border-border/40">
-                <span className="text-[9px] uppercase tracking-wider text-muted-foreground/60 font-bold font-mono">Preferences</span>
+                <span className="text-[9px] uppercase tracking-wider text-muted-foreground/60 font-bold font-mono">{language === 'fr' ? 'Préférences' : 'Preferences'}</span>
                 <div className="flex items-center gap-2">
                   {/* Theme */}
                   <button
@@ -282,7 +281,7 @@ export function Navbar() {
 
                   {/* GitHub Link */}
                   <a
-                    href="https://github.com/Ashlok2003/portfolio"
+                    href="https://github.com/sofian-ezahery"
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={() => playKeystroke('standard')}
