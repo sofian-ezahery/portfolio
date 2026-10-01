@@ -22,8 +22,7 @@ export const ResumeSection: FC = () => {
   useEffect(() => {
     // PDF worker config
     import('react-pdf').then(({ pdfjs }) => {
-      pdfjs.GlobalWorkerOptions.workerSrc =
-        `https://cdn.jsdelivr.net/npm/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`
+      pdfjs.GlobalWorkerOptions.workerSrc = '/pdf.worker.min.mjs'
     })
   }, [])
 

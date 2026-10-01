@@ -5,9 +5,11 @@
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
+    "prebuild": "cp node_modules/pdfjs-dist/build/pdf.worker.min.mjs public/",
     "start": "next start",
     "lint": "next lint",
     "pages:build": "npx @cloudflare/next-on-pages",
+    "prepages:build": "cp node_modules/pdfjs-dist/build/pdf.worker.min.mjs public/",
     "preview": "npm run pages:build && wrangler pages dev",
     "deploy": "npm run pages:build && wrangler pages deploy",
     "cf-typegen": "wrangler types --env-interface CloudflareEnv ./env.d.ts"
