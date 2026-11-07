@@ -1,4 +1,5 @@
 // import { BlogsSection } from '@/components/main/Blogs' // Section Articles masquée temporairement
+import Certifications from '@/components/main/Certifications'
 import ContactUs from '@/components/main/ContactUs'
 import Hero from '@/components/main/Hero'
 import Projects from '@/components/main/Projects'
@@ -22,14 +23,16 @@ export default function Home() {
       <SectionDivider code="0x04" />
       <Timeline />
       <SectionDivider code="0x05" />
+      <Certifications />
+      <SectionDivider code="0x06" />
       <Projects />
       {/* Section Articles masquée temporairement (contenu pas encore rédigé par Sofian)
-      <SectionDivider code="0x06" />
+      <SectionDivider code="0x07" />
       <BlogsSection />
       */}
-      <SectionDivider code="0x06" />
-      <ContactUs />
       <SectionDivider code="0x07" />
+      <ContactUs />
+      <SectionDivider code="0x08" />
       <Toaster position="bottom-right" />
     </main>
   )

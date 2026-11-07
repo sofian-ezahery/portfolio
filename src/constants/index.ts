@@ -86,6 +86,34 @@ export const projectsData: Project[] = [
   },
 ]
 
+export interface Certification {
+  name: string
+  examCode: string
+  issuer: string
+  /** Clé de l'icône sur skillicons.dev (domaine déjà autorisé par la CSP). */
+  icon: string
+  issued: { fr: string; en: string }
+  expires: { fr: string; en: string }
+  /** Dates ISO pour les données structurées (JSON-LD). */
+  issuedIso: string
+  expiresIso: string
+  credlyUrl: string
+}
+
+export const certificationsData: Certification[] = [
+  {
+    name: 'AWS Certified Cloud Practitioner',
+    examCode: 'CLF-C02',
+    issuer: 'Amazon Web Services',
+    icon: 'aws',
+    issued: { fr: '6 nov. 2026', en: 'Nov 6, 2026' },
+    expires: { fr: '6 nov. 2029', en: 'Nov 6, 2029' },
+    issuedIso: '2026-11-06',
+    expiresIso: '2029-11-06',
+    credlyUrl: 'https://www.credly.com/badges/bf3c75c3-32ca-4b2f-ba32-86dd5f5bde02',
+  },
+]
+
 export interface Blog {
   id: number
   title: string

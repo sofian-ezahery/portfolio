@@ -29,6 +29,14 @@ type TranslationDict = {
   experience: {
     title: string
   }
+  certifications: {
+    title: string
+    heroBadge: string
+    level: string
+    issued: string
+    expires: string
+    verify: string
+  }
   projects: {
     title: string
     taglines: {
@@ -97,6 +105,14 @@ const translations: Record<Language, TranslationDict> = {
     experience: {
       title: 'Expérience Professionnelle',
     },
+    certifications: {
+      title: 'Certifications',
+      heroBadge: 'Certifié AWS Cloud Practitioner',
+      level: 'Niveau fondamental',
+      issued: 'Obtenue le',
+      expires: "valide jusqu'au",
+      verify: 'Vérifier sur Credly',
+    },
     projects: {
       title: 'Projets',
       taglines: {
@@ -162,6 +178,14 @@ const translations: Record<Language, TranslationDict> = {
     },
     experience: {
       title: 'Work Experience',
+    },
+    certifications: {
+      title: 'Certifications',
+      heroBadge: 'AWS Certified Cloud Practitioner',
+      level: 'Foundational',
+      issued: 'Issued',
+      expires: 'valid until',
+      verify: 'Verify on Credly',
     },
     projects: {
       title: 'Projects',

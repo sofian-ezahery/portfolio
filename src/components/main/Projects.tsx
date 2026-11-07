@@ -83,7 +83,7 @@ export const Projects: FC = () => {
   const premiumProjects = projectsData
 
   return (
-    <SectionWrapper id="projects" title={t.projects.title} code="0x05">
+    <SectionWrapper id="projects" title={t.projects.title} code="0x06">
       <div className="px-6 pb-12 pt-8">
         <div className="space-y-0 border-b border-border">
           {premiumProjects.map((project: Project, idx: number) => {

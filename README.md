@@ -16,6 +16,10 @@ Fort d'une expérience en gestion de projets IT, support N1/N2, digitalisation e
 - **OpenClassrooms** — Technicien Informatique (RNCP niveau 5) · _Octobre 2024_
 - **Lycée Luxembourg (Vesoul)** — Baccalauréat professionnel MEI · _Juin 2017_
 
+## 🏅 Certifications
+
+- **AWS Certified Cloud Practitioner (CLF-C02)** — Amazon Web Services · _Novembre 2026_ (valide jusqu'en novembre 2029) · [Vérifier sur Credly](https://www.credly.com/badges/bf3c75c3-32ca-4b2f-ba32-86dd5f5bde02)
+
 ## 💼 Expérience
 
 - **Teleperformance France** — Administrateur Systèmes & Réseaux · _Oct 2023 – Oct 2025_

@@ -6,6 +6,7 @@ import { CommandPalette } from '@/components/ui/command-palette'
 import { SoundProvider } from '@/components/sound-provider'
 import { LanguageProvider } from '@/components/language-provider'
 import { MotionProvider } from '@/components/motion-provider'
+import { certificationsData } from '@/constants'
 import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
 import './globals.css'
@@ -32,6 +33,7 @@ export const metadata: Metadata = {
     'Ingénieur DevOps',
     'SRE',
     'Cloud AWS Azure',
+    'AWS Certified Cloud Practitioner',
     'CI/CD',
     'Docker Kubernetes',
     'Terraform Ansible',
@@ -96,6 +98,15 @@ const jsonLd = {
   telephone: '+33685574887',
   description:
     'Administrateur Systèmes & Réseaux spécialisé DevOps : CI/CD, cloud, conteneurisation, IaC et automatisation.',
+  hasCredential: certificationsData.map((cert) => ({
+    '@type': 'EducationalOccupationalCredential',
+    name: `${cert.name} (${cert.examCode})`,
+    credentialCategory: 'certification',
+    recognizedBy: { '@type': 'Organization', name: cert.issuer },
+    dateCreated: cert.issuedIso,
+    expires: cert.expiresIso,
+    url: cert.credlyUrl,
+  })),
 }
 
 export default function RootLayout({

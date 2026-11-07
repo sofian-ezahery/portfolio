@@ -4,9 +4,10 @@ import { motion } from 'framer-motion'
 import { FC, useState } from 'react'
 import Image from 'next/image'
 import { FaFileDownload } from 'react-icons/fa'
-import { ArrowDown, BadgeCheck } from 'lucide-react'
+import { ArrowDown, ArrowUpRight, BadgeCheck } from 'lucide-react'
 import { useSound } from '@/components/sound-provider'
 import { useLanguage } from '@/components/language-provider'
+import { certificationsData } from '@/constants'
 
 const tickerItems = [
   { name: 'docker', icon: 'docker' },
@@ -222,6 +223,22 @@ export const Hero: FC = () => {
                 <h2 className="text-lg sm:text-xl font-mono text-muted-foreground tracking-wide">
                   {t.hero.title}
                 </h2>
+                <a
+                  href={certificationsData[0].credlyUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title={t.certifications.verify}
+                  className="inline-flex items-center gap-2 mt-1 px-3 py-1 rounded-full border border-brand-blue/30 bg-brand-blue/[0.06] font-mono text-[10px] sm:text-[11px] uppercase tracking-wider text-brand-blue hover:bg-brand-blue/10 transition-colors duration-200"
+                >
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={`https://skillicons.dev/icons?i=${certificationsData[0].icon}`}
+                    alt=""
+                    className="w-3.5 h-3.5 object-contain"
+                  />
+                  <span>{t.certifications.heroBadge}</span>
+                  <ArrowUpRight className="h-3 w-3" />
+                </a>
               </div>
 
               {/* Description bio */}
